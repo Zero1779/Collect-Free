@@ -1,0 +1,49 @@
+Windows Registry Editor Version 5.00
+
+; ================================================================
+; Collect AMD Free - Otimizações de Driver AMD
+; Objetivo: FPS estável + Latência reduzida (configurações seguras)
+; Compatível com: RX 5000 / 6000 / 7000 series
+; ================================================================
+; COMO USAR:
+; 1. Feche o AMD Adrenalin antes de aplicar
+; 2. Dê duplo clique neste arquivo e confirme
+; 3. Reinicie o PC
+; 4. Aplique as configurações do Guia no Adrenalin
+; ================================================================
+
+; ----------------------------------------------------------------
+; ULPS - Ultra Low Power State: DESATIVAR
+; Impede a GPU de entrar em modo de baixíssimo consumo entre frames
+; Equivalente ao "Power Management = Max Performance" da NVIDIA
+; Sem isso a GPU pode demorar milissegundos para sair do modo econômico
+; ----------------------------------------------------------------
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{4d36e968-e325-11ce-bfc1-08002be10318}\0000]
+"EnableULPS"=dword:00000000
+"EnableULPS_NA"=dword:00000000
+
+; Cobre sistemas com iGPU Intel/AMD onde a discreta fica em 0001
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{4d36e968-e325-11ce-bfc1-08002be10318}\0001]
+"EnableULPS"=dword:00000000
+"EnableULPS_NA"=dword:00000000
+
+; ----------------------------------------------------------------
+; Shader Clock Deep Sleep: DESATIVAR
+; Impede o clock do shader de adormecer entre frames
+; Reduz micro-stutters causados pelo ramp-up de clock
+; ----------------------------------------------------------------
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{4d36e968-e325-11ce-bfc1-08002be10318}\0000]
+"PP_SclkDeepSleepDisable"=dword:00000001
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{4d36e968-e325-11ce-bfc1-08002be10318}\0001]
+"PP_SclkDeepSleepDisable"=dword:00000001
+
+; ----------------------------------------------------------------
+; Memory Clock Deep Sleep: DESATIVAR
+; Impede o clock da VRAM de adormecer - evita stalls de memória
+; ----------------------------------------------------------------
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{4d36e968-e325-11ce-bfc1-08002be10318}\0000]
+"PP_MclkDeepSleepDisable"=dword:00000001
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{4d36e968-e325-11ce-bfc1-08002be10318}\0001]
+"PP_MclkDeepSleepDisable"=dword:00000001
