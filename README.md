@@ -73,7 +73,7 @@ Funciona como um menu interativo com 18 categorias de otimização. Você escolh
 Collect-Free/
 ├── Collect_Free.ps1              ← Script principal
 ├── Executar_Collect_Free.bat     ← Lançador com auto-elevação
-├── Collect_Free_Guia_Completo.html
+├── Collect_Free_Guia_Completo.pdf
 ├── README.md
 └── apps/                         ← Ferramentas e perfis
     ├── Collect_Nvidia_Free.nip
