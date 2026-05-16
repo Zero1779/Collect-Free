@@ -52,7 +52,7 @@ Funciona como um menu interativo com 18 categorias de otimização. Você escolh
 
 1. Baixe o repositório ou clone:
    ```
-   git clone https://github.com/Zero1779/Collect-Free
+   git clone https://github.com/Zerinhox33/Collect-Free
    ```
 
 2. Abra a pasta e clique com botão direito em **`Executar_Collect_Free.bat`**
